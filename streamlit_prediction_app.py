@@ -118,7 +118,7 @@ if bf_file and im_file and op_file and provider_file:
 
     # Load model
     with open('xgb_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+        model = pickle.load(f)
 
     # Predict
     X_unseen = provider_features.drop(columns=['Provider'])
@@ -148,5 +148,6 @@ if bf_file and im_file and op_file and provider_file:
         "unseen_provider_predictions.csv",
         "text/csv"
     )
+
 
 
