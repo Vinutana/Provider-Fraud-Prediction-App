@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
+# import joblib
 
 st.title("🩺 Provider Fraud Prediction App")
 
@@ -109,7 +110,15 @@ if bf_file and im_file and op_file and provider_file:
     provider_features=provider_features.fillna(0)
 
     # Load saved model
-    model = joblib.load("xgb_model.pkl")
+    # model = joblib.load("xgb_model.pkl")
+
+    # Save model
+    # with open('model.pkl', 'wb') as f:
+    # pickle.dump(model, f)
+
+    # Load model
+    with open('xgb_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
     # Predict
     X_unseen = provider_features.drop(columns=['Provider'])
@@ -139,4 +148,5 @@ if bf_file and im_file and op_file and provider_file:
         "unseen_provider_predictions.csv",
         "text/csv"
     )
+
 
