@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-st.title("Provider Fraud Prediction App")
+st.title("🩺 Provider Fraud Prediction App")
 
 # Upload CSV Files
 st.sidebar.header("Upload CSV Files")
@@ -139,3 +139,4 @@ if bf_file and im_file and op_file and provider_file:
         "unseen_provider_predictions.csv",
         "text/csv"
     )
+
