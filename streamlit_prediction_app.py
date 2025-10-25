@@ -110,14 +110,14 @@ if bf_file and im_file and op_file and provider_file:
     provider_features=provider_features.fillna(0)
 
     # Load saved model
-    # model = joblib.load("xgb_model.pkl")
+    # model = joblib.load("xgb_model_v2.pkl")
 
     # Save model
     # with open('model.pkl', 'wb') as f:
     # pickle.dump(model, f)
 
     # Load model
-    with open('xgb_model.pkl', 'rb') as f:
+    with open('xgb_model_v2.pkl', 'rb') as f:
         model = pickle.load(f)
 
     # Predict
@@ -148,6 +148,7 @@ if bf_file and im_file and op_file and provider_file:
         "unseen_provider_predictions.csv",
         "text/csv"
     )
+
 
 
 
