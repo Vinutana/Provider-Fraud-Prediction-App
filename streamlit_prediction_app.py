@@ -1,4 +1,3 @@
-%%writefile streamlit_prediction_app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -177,4 +176,5 @@ if bf_file and im_file and op_file and provider_file:
     output_df[['Provider','PredictedFraud','FraudProbability']].to_csv(index=False).encode('utf-8'),
     "unseen_provider_predictions.csv",
     "text/csv")
+
 
